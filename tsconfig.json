@@ -23,6 +23,12 @@
       "dom"
     ]
   },
+  "paths": {
+    "@shared/*": ["src/app/shared/*"],
+    "@app/*": ["src/app/core/*"],
+    "@env/*": ["src/environments/environment"],
+    "@modules/*": ["src/modules/*"],
+  },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
