@@ -1,0 +1,27 @@
+$border-radius: 5px;
+
+.artist {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  border-radius: $border-radius;
+  cursor: pointer;
+
+  &__image-container, &__image {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+  }
+  &__name {
+    flex: 0 0 20px;
+    font-size: 13px;
+    padding: 7px;
+    text-align: center;
+  }
+}

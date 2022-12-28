@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TrackListRoutingModule } from './track-list-routing.module';
-import { TrackListComponent } from './pages/track-list.component';
+import { TrackListComponent } from './pages/track-list/track-list.component';
 
+import { SharedModule } from 'src/app/shared/shared.module';
+import { DataModule } from 'src/app/data/data.module';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   declarations: [
@@ -11,6 +14,9 @@ import { TrackListComponent } from './pages/track-list.component';
   ],
   imports: [
     CommonModule,
+    CoreModule,
+    SharedModule,
+    DataModule,
     TrackListRoutingModule
   ]
 })

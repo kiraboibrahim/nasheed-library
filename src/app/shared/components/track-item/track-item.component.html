@@ -1,0 +1,19 @@
+<div class="track">
+  <div class="track__image-container">
+    <img class="track__image" src="/assets/images/music-note-simple.svg">
+  </div>
+  <div class="track__metadata-container">
+    <span class="track__name">{{ track.name }}</span>
+    <span class="track__artist-name">{{ track.artist.name }}</span>
+    <span *ngIf="track.duration" class="track__duration">{{ track.duration }}</span>
+    <div class="track__actions">
+      <button mat-icon-button (click)="play_track()">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+
+      <a mat-icon-button href="{{ track.file }}" download>
+        <mat-icon>download</mat-icon>
+      </a>
+    </div>
+  </div>
+</div>

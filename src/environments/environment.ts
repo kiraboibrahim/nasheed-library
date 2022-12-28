@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  music_api_base_url: "http://localhost:8000/v2",
+  media_base_url: "http://localhost:8000"
 };
 
 /*

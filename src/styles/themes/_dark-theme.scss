@@ -1,0 +1,80 @@
+@use '@angular/material' as mat;
+
+$black-palette: (
+    50 : #e4e4e4,
+    100 : #bcbcbc,
+    200 : #909090,
+    300 : #646464,
+    400 : #424242,
+    500 : #212121,
+    600 : #1d1d1d,
+    700 : #181818,
+    800 : #141414,
+    900 : #0b0b0b,
+    A100 : #e76c6c,
+    A200 : #e04040,
+    A400 : #ec0000,
+    A700 : #d30000,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+
+$green-palette: (
+    50 : #e0f8ea,
+    100 : #b3efcb,
+    200 : #80e4a9,
+    300 : #4dd987,
+    400 : #26d06d,
+    500 : #00c853,
+    600 : #00c24c,
+    700 : #00bb42,
+    800 : #00b439,
+    900 : #00a729,
+    A100 : #d1ffd9,
+    A200 : #9effaf,
+    A400 : #6bff85,
+    A700 : #52ff70,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$primary: mat.define-palette($black-palette);
+$accent: mat.define-palette($green-palette);
+$warn: mat.define-palette(mat.$red-palette);
+
+$nasheed_library-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn
+  )
+));

@@ -1,0 +1,11 @@
+<h2 class="title"> All Tracks</h2>
+<mat-divider></mat-divider>
+
+<div *ngFor="let track of tracks">
+  <app-track-item  [track]=track (play)="on_play($event)"></app-track-item>
+  <mat-divider></mat-divider>
+</div>
+
+<app-progress-spinner *ngIf="loading"></app-progress-spinner>
+
+<audio-player *ngIf="tracks.length != 0" [audioList]=tracks></audio-player>

@@ -1,1 +1,20 @@
-<p>nav works!</p>
+<mat-toolbar class="nav" role="navigation">
+  <button mat-button class="nav__link" routerLink="/artists" routerLinkActive="nav__link--active">
+    <div class="nav__icon">
+      <mat-icon inline="true">library_music</mat-icon>
+    </div>
+    <span class="nav__link-text">Artists</span>
+  </button>
+  <button mat-button class="nav__link" routerLink="/tracks" routerLinkActive="nav__link--active">
+    <div class="nav__icon">
+      <mat-icon inline="true">music_note</mat-icon>
+    </div>
+    <span class="nav__link-text">Tracks</span>
+  </button>
+  <button mat-button class="nav__link" routerLink="/search" routerLinkActive="nav__link--active">
+    <div class="nav__icon">
+      <mat-icon inline="true">search</mat-icon>
+    </div>
+    <span class="nav__link-text">Search</span>
+  </button>
+</mat-toolbar>

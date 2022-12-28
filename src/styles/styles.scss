@@ -1,0 +1,32 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+@use '../app/layout/nav/nav-theme' as nav;
+@use '../app/shared/components/artist-item/artist-item-theme' as artist-item;
+@use '../app/shared/components/track-item/track-item-theme' as track-item;
+
+@import './themes/_dark-theme';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
+@include mat.all-component-themes($nasheed_library-dark-theme);
+@include nav.theme($nasheed_library-dark-theme);
+@include artist-item.theme($nasheed_library-dark-theme);
+@include track-item.theme($nasheed_library-dark-theme);
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

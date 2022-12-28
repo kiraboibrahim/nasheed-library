@@ -11,5 +11,12 @@
   ],
   "include": [
     "src/**/*.d.ts"
-  ]
+  ],
+  "baseUrl": "./",
+  "paths": {
+    "@shared/*": ["src/app/shared/*"],
+    "@core/*": ["src/app/core/*"],
+    "@env": ["src/environments/environment"],
+    "@modules/*": ["src/modules/*"]
+  },
 }
