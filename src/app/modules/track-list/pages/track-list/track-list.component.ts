@@ -2,13 +2,14 @@ import {
   Component,
   OnInit,
   OnDestroy,
+  ViewChild,
 } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { MusicService } from 'src/app/data/service/music.service';
 import { EndOfPageScrollService } from 'src/app/core/services/end-of-page-scroll.service';
 import { Track } from 'src/app/data/types/track.model';
-import { Subscription } from 'rxjs';
-import { textChangeRangeIsUnchanged } from 'typescript';
+import { AudioPlayerComponent } from 'src/app/shared/components/audio-player/audio-player.component';
 
 @Component({
   selector: 'app-track-list',
@@ -17,10 +18,13 @@ import { textChangeRangeIsUnchanged } from 'typescript';
 })
 export class TrackListComponent implements OnInit, OnDestroy {
   tracks: Track[] = [];
-  current_page_number: number = 1;
+
+  current_tracks_page_number: number = 1;
   last_page_reached: boolean = false;
   loading: boolean = false;
   end_of_page_scroll_subscription: Subscription;
+
+  @ViewChild(AudioPlayerComponent) audio_player: AudioPlayerComponent;
 
   constructor(private music_service: MusicService, private end_of_page_scroll_service: EndOfPageScrollService) {}
 
@@ -34,7 +38,7 @@ export class TrackListComponent implements OnInit, OnDestroy {
   get_tracks(): void {
     if(!this.last_page_reached && !this.loading) {
       this.loading = true;
-      this.music_service.get_tracks(this.current_page_number).subscribe((data: any) => {
+      this.music_service.get_tracks(this.current_tracks_page_number).subscribe((data: any) => {
         if(data.next == null) {
           this.last_page_reached = true;
         }
@@ -50,11 +54,12 @@ export class TrackListComponent implements OnInit, OnDestroy {
   }
 
   set_next_page(): void {
-    this.current_page_number++;
+    this.current_tracks_page_number++;
   }
 
   on_play(track: Track) {
-    console.log("Playing: ", track.name);
+    this.audio_player.selectedAudio = track;
+    this.audio_player.play();
   }
 
   ngOnDestroy(): void {

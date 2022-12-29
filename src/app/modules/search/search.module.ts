@@ -11,7 +11,7 @@ import { SearchComponent } from './pages/search/search.component';
   ],
   imports: [
     CommonModule,
-    SearchRoutingModule
+    SearchRoutingModule,
   ]
 })
 export class SearchModule { }

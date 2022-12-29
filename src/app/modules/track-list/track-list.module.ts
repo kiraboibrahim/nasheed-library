@@ -7,6 +7,7 @@ import { TrackListComponent } from './pages/track-list/track-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DataModule } from 'src/app/data/data.module';
 import { CoreModule } from 'src/app/core/core.module';
+import { LayoutModule } from 'src/app/layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CoreModule } from 'src/app/core/core.module';
   imports: [
     CommonModule,
     CoreModule,
+    LayoutModule,
     SharedModule,
     DataModule,
     TrackListRoutingModule

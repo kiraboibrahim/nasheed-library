@@ -1,8 +1,14 @@
-<h2 class="title"> All Artists</h2>
-<mat-divider></mat-divider>
+<app-header></app-header>
 
-<div class="artist-list-container">
-  <app-artist-item  *ngFor="let artist of artists" [artist]=artist></app-artist-item>
+<div [ngStyle]="{ 'padding': '2em' }">
+  <h2 class="title"> All Artists</h2>
+  <mat-divider></mat-divider>
+
+  <div class="artist-list-container">
+    <app-artist-item  *ngFor="let artist of artists" [artist]=artist></app-artist-item>
+  </div>
+
+  <app-progress-spinner *ngIf="loading"></app-progress-spinner>
 </div>
 
-<app-progress-spinner *ngIf="loading"></app-progress-spinner>
+<app-nav></app-nav>
