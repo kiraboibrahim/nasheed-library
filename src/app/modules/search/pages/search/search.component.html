@@ -1,1 +1,40 @@
-<p> Search works </p>
+<mat-toolbar>
+  <form #form="ngForm" class="search-form" (ngSubmit)="on_submit(form)">
+    <input class="search-form__query-input" name="query" type="search" placeholder="Search" [(ngModel)]="query">
+    <button type="submit" class="search-form__submit-button">
+      <mat-icon>search</mat-icon>
+    </button>
+  </form>
+</mat-toolbar>
+
+<mat-tab-group mat-tabs-stretch="true" color="accent" (selectedTabChange)="on_tab_change($event)">
+  <mat-tab label="Tracks">
+    <ng-template matTabContent>
+      <div class="tracks-results-container">
+        <div *ngFor="let track of tracks">
+          <app-track-item [track]=track></app-track-item>
+          <mat-divider></mat-divider>
+        </div>
+      </div>
+
+      <app-progress-spinner *ngIf="loading_tracks"></app-progress-spinner>
+
+      <div class="no-results-found" *ngIf="reached_last_page_of_tracks_results && tracks.length == 0">No tracks found</div>
+
+      <audio-player *ngIf="tracks.length != 0" [audioList]=tracks></audio-player>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="Artists">
+    <ng-template matTabContent>
+      <div class="artists-results-container">.
+        <app-artist-item *ngFor="let artist of artists" [artist]=artist></app-artist-item>
+      </div>
+      <app-progress-spinner *ngIf="loading_artists"></app-progress-spinner>
+
+      <div class="no-results-found" *ngIf="reached_last_page_of_artists_results && artists.length == 0">No artists found</div>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+
+<app-nav></app-nav>

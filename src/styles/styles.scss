@@ -5,6 +5,7 @@
 @use '../app/layout/nav/nav-theme' as nav;
 @use '../app/shared/components/artist-item/artist-item-theme' as artist-item;
 @use '../app/shared/components/track-item/track-item-theme' as track-item;
+@use '../app/modules/search/search-theme' as search;
 
 @import './themes/_dark-theme';
 
@@ -21,6 +22,7 @@
 @include nav.theme($nasheed_library-dark-theme);
 @include artist-item.theme($nasheed_library-dark-theme);
 @include track-item.theme($nasheed_library-dark-theme);
+@include search.theme($nasheed_library-dark-theme);
 
 html, body {
   height: 100%;

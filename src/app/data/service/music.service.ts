@@ -35,11 +35,13 @@ export class MusicService {
     return this.http.get(url).pipe(delay(3000));
   }
 
-  search_tracks(query: string, page: number = 1) {
-
+  search_tracks(query: string, page_number: number) {
+    let url = `${this.api_base_url}/tracks/search/${query}?page=${page_number}`;
+    return this.http.get(url).pipe(delay(3000));
   }
 
-  search_artists(query: string, page: number = 1) {
-
+  search_artists(query: string, page_number: number) {
+    let url = `${this.api_base_url}/artists/search/${query}?page=${page_number}`;
+    return this.http.get(url).pipe(delay(3000));
   }
 }
