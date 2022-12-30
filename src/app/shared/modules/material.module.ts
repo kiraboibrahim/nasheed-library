@@ -8,7 +8,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule} from "@angular/material/sidenav"
 import { MatDividerModule } from "@angular/material/divider";
 import { MatGridListModule} from "@angular/material/grid-list";
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner"
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner"
     MatDividerModule,
     MatGridListModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule,
   ],
 })
 export class MaterialModule { }
