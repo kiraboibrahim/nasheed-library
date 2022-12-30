@@ -47,7 +47,15 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   on_submit(form: NgForm) {
-    this.router.navigate(["search", form.value.query]).then((navigated: boolean | null) => {
+    this.fresh_search(form.value.query);
+  }
+
+  on_query_change(query: string) {
+   this.fresh_search(query);
+  }
+
+  fresh_search(query: string) {
+    this.router.navigate(["search", query]).then((navigated: boolean | null) => {
       if(navigated == true) {
         this.reset_search();
         this.search();
@@ -67,18 +75,6 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.reached_last_page_of_artists_results = false;
   }
 
-  on_tab_change(event: MatTabChangeEvent) {
-    switch(event.index) {
-      case 0:
-        this.search_context = "tracks";
-        break;
-      case 1:
-        this.search_context = "artists";
-        break;
-    }
-    if(this.tracks.length == 0 || this.artists.length == 0) this.search();
-  }
-
   search(): void {
     if(!this.query) return;
     switch(this.search_context) {
@@ -96,9 +92,12 @@ export class SearchComponent implements OnInit, OnDestroy {
       this.loading_artists = true;
       this.music_service.search_artists(<string>this.query, this.artists_page_number).
       subscribe((data: any) => {
-        if(data.next == null) this.reached_last_page_of_artists_results = true;
+        if(data.next == null) {
+          this.reached_last_page_of_artists_results = true;
+        } else {
+          this.artists_page_number++;
+        }
         this.loading_artists = false;
-        this.artists_page_number++;
         this.artists = this.artists.concat(data.results);
       });
     }
@@ -109,14 +108,27 @@ export class SearchComponent implements OnInit, OnDestroy {
       this.loading_tracks = true;
       this.music_service.search_tracks(<string>this.query, this.tracks_page_number).
       subscribe((data: any) => {
-        if(data.next == null) this.reached_last_page_of_tracks_results = true;
+        if(data.next == null) {
+          this.reached_last_page_of_tracks_results = true
+         } else {
+          this.tracks_page_number++;
+        }
         this.loading_tracks = false;
-        this.tracks_page_number++;
         this.tracks = this.tracks.concat(data.results);
       });
-    } else {
-      console.log(this.reached_last_page_of_tracks_results, this.loading_tracks);
     }
+  }
+
+  on_tab_change(event: MatTabChangeEvent) {
+    switch(event.index) {
+      case 0:
+        this.search_context = "tracks";
+        break;
+      case 1:
+        this.search_context = "artists";
+        break;
+    }
+    if(this.tracks.length == 0 || this.artists.length == 0) this.search();
   }
 
   ngOnDestroy(): void {

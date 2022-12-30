@@ -1,14 +1,14 @@
 <mat-toolbar>
-  <form #form="ngForm" class="search-form" (ngSubmit)="on_submit(form)">
-    <input class="search-form__query-input" name="query" type="search" placeholder="Search" [(ngModel)]="query">
-    <button type="submit" class="search-form__submit-button">
+  <form #form="ngForm" class="search-form">
+    <input class="search-form__query-input" name="query" type="search" placeholder="Search artists, tracks" [(ngModel)]="query" ngModelDebounceChange (ng_model_debounce_change)="on_query_change($event)">
+    <!--button type="submit" class="search-form__submit-button">
       <mat-icon>search</mat-icon>
-    </button>
+    </button-->
   </form>
 </mat-toolbar>
 
 <mat-tab-group mat-tabs-stretch="true" color="accent" (selectedTabChange)="on_tab_change($event)">
-  <mat-tab label="Tracks">
+  <mat-tab labeClass="tab-label" label="Tracks">
     <ng-template matTabContent>
       <div class="tracks-results-container">
         <div *ngFor="let track of tracks">

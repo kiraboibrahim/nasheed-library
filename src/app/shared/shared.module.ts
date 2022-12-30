@@ -8,6 +8,7 @@ import { ArtistItemComponent } from './components/artist-item/artist-item.compon
 import { FormatAudioDurationPipe } from './pipes/format-audio-duration.pipe';
 import { AudioPlayerComponent } from './components/audio-player/audio-player.component';
 import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
+import { NgModelDebounceChangeDirective } from './directives/ng-model-debounce-change.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProgressSpinnerComponent } from './components/progress-spinner/progress
     FormatAudioDurationPipe,
     AudioPlayerComponent,
     ProgressSpinnerComponent,
+    NgModelDebounceChangeDirective,
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { ProgressSpinnerComponent } from './components/progress-spinner/progress
     TrackItemComponent,
     AudioPlayerComponent,
     ProgressSpinnerComponent,
+    NgModelDebounceChangeDirective,
   ]
 })
 export class SharedModule { }
