@@ -1,5 +1,9 @@
 # NasheedLibrary
 
+![Example Screen of Nasheed Library](https://ik.imagekit.io/8mch78q847k/nasheed-library-example-screen_oD_6sg99m.png?ik-sdk-version=javascript-1.4.3&updatedAt=1672469099455)
+
+This is the frontend application of the NasheedLibrary project whose aim is to provide a free source of [nasheed](https://en.wikipedia.org/wiki/Nasheed) music by providing an avenue for users to listen, search and download [nasheed](https://en.wikipedia.org/wiki/Nasheed) music.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
 
 ## Development server
