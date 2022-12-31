@@ -1,7 +1,7 @@
 $border-radius: 5px;
 
 .artist {
-  width: 160px;
+  width: 125px;
   display: flex;
   flex-direction: column;
   margin-left: 15px;
@@ -9,9 +9,13 @@ $border-radius: 5px;
   border-radius: $border-radius;
   cursor: pointer;
 
-  &__image-container, &__image {
+  &__image {
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
+    flex: 1 0 120px;
+    background-size:contain;
+    background-repeat: no-repeat;
+
   }
 
   &__image {
