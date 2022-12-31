@@ -4,6 +4,9 @@
 
 This is the frontend application of the NasheedLibrary project whose aim is to provide a free source of [nasheed](https://en.wikipedia.org/wiki/Nasheed) music by providing an avenue for users to listen, search and download [nasheed](https://en.wikipedia.org/wiki/Nasheed) music.
 
+This frontend is supported by [nasheed-library-backend](https://github.com/kiraboibrahim/nasheed-library-backend)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
 
 ## Development server
