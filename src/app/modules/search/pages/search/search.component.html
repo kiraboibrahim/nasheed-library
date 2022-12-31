@@ -1,9 +1,6 @@
 <mat-toolbar>
-  <form #form="ngForm" class="search-form">
+  <form class="search-form">
     <input class="search-form__query-input" name="query" type="search" placeholder="Search artists, tracks" [(ngModel)]="query" ngModelDebounceChange (ng_model_debounce_change)="on_query_change($event)">
-    <!--button type="submit" class="search-form__submit-button">
-      <mat-icon>search</mat-icon>
-    </button-->
   </form>
 </mat-toolbar>
 

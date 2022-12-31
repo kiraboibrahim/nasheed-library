@@ -26,9 +26,11 @@ export class SearchComponent implements OnInit, OnDestroy {
   artists_page_number: number = 1;
   reached_last_page_of_artists_results: boolean = false;
 
-  end_of_page_scroll_subscription: Subscription;
   query: string | null;
   search_context: string = "tracks";
+
+  music_service_subscription: Subscription;
+  end_of_page_scroll_subscription: Subscription;
 
   constructor(private music_service: MusicService,
               private end_of_page_scroll_service: EndOfPageScrollService,
@@ -73,6 +75,10 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.loading_artists = false;
     this.artists_page_number = 1;
     this.reached_last_page_of_artists_results = false;
+
+    // Cancel any active subscription to prevent previous subscriptions from altering
+    // search results(artists, tracks) through multiple subscriptions
+    if(this.music_service_subscription) this.music_service_subscription.unsubscribe();
   }
 
   search(): void {
@@ -90,7 +96,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   search_artists() {
     if(!this.reached_last_page_of_artists_results && !this.loading_artists) {
       this.loading_artists = true;
-      this.music_service.search_artists(<string>this.query, this.artists_page_number).
+      this.music_service_subscription = this.music_service.search_artists(<string>this.query, this.artists_page_number).
       subscribe((data: any) => {
         if(data.next == null) {
           this.reached_last_page_of_artists_results = true;
@@ -106,7 +112,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   search_tracks() {
     if(!this.reached_last_page_of_tracks_results && !this.loading_tracks) {
       this.loading_tracks = true;
-      this.music_service.search_tracks(<string>this.query, this.tracks_page_number).
+      this.music_service_subscription = this.music_service.search_tracks(<string>this.query, this.tracks_page_number).
       subscribe((data: any) => {
         if(data.next == null) {
           this.reached_last_page_of_tracks_results = true
