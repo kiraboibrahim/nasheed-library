@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672598497620,
+  "timestamp": 1672598934237,
   "index": "https://kiraboibrahim.github.io/nasheed-library/index.html",
   "assetGroups": [
     {
@@ -68,7 +68,7 @@
     "https://kiraboibrahim.github.io/nasheed-library/assets/images/music-note-simple.svg": "71e84b806eec79cd2b6ab0292685e765f89742d0",
     "https://kiraboibrahim.github.io/nasheed-library/common.346cf52317262bbd.js": "403c54baff41c21b7ce5946def32736c8fb81269",
     "https://kiraboibrahim.github.io/nasheed-library/favicon.ico": "dcc4b92706eff996f6cf98974cfd6e523444fa85",
-    "https://kiraboibrahim.github.io/nasheed-library/index.html": "5374f7bd19e627f1ff9873b2532006e991fe5f77",
+    "https://kiraboibrahim.github.io/nasheed-library/index.html": "e92f58cfba193b1ee4faf75b317c3e9c11d320d9",
     "https://kiraboibrahim.github.io/nasheed-library/main.74849b0cf928e231.js": "0ea85227b7efa445a625c2601e0ec5a6448e3154",
     "https://kiraboibrahim.github.io/nasheed-library/manifest.webmanifest": "a02ffe9c3fed5b741e19c312d7f1f8ed0d6340b0",
     "https://kiraboibrahim.github.io/nasheed-library/polyfills.67eaa7d5a6c7cec0.js": "9a8eb103250feffecc33cdb1a775c1ef49f08977",
