@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   music_api_base_url: "http://localhost:8000/v2",
-  media_base_url: "http://localhost:8000"
 };
 
 /*
