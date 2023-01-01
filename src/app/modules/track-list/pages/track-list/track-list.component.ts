@@ -38,7 +38,8 @@ export class TrackListComponent implements OnInit, OnDestroy {
   get_tracks(): void {
     if(!this.last_page_reached && !this.loading) {
       this.loading = true;
-      this.music_service.get_tracks(this.current_tracks_page_number).subscribe((data: any) => {
+      this.music_service.get_tracks(this.current_tracks_page_number)
+      .subscribe((data: any) => {
         if(data.next == null) {
           this.last_page_reached = true;
         }
