@@ -8,7 +8,8 @@ import { ArtistItemComponent } from './components/artist-item/artist-item.compon
 import { FormatAudioDurationPipe } from './pipes/format-audio-duration.pipe';
 import { AudioPlayerComponent } from './components/audio-player/audio-player.component';
 import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
-import { NgModelDebounceChangeDirective } from './directives/ng-model-debounce-change.directive';
+import { NgModelDebounceChangeDirective } from './directives/ng-model-debounce-change/ng-model-debounce-change.directive';
+import { CorsDownloadDirective } from './directives/cors-download/cors-download.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NgModelDebounceChangeDirective } from './directives/ng-model-debounce-c
     AudioPlayerComponent,
     ProgressSpinnerComponent,
     NgModelDebounceChangeDirective,
+    CorsDownloadDirective,
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,7 @@ import { NgModelDebounceChangeDirective } from './directives/ng-model-debounce-c
     AudioPlayerComponent,
     ProgressSpinnerComponent,
     NgModelDebounceChangeDirective,
+    CorsDownloadDirective,
   ]
 })
 export class SharedModule { }

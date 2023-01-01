@@ -1,4 +1,4 @@
-<div class="track" (click)="play_track()">
+<div class="track" (click)="play_track($event)">
   <div class="track__image-container">
     <img class="track__image" src="/assets/images/music-note-simple.svg">
   </div>
@@ -7,11 +7,11 @@
     <span class="track__artist-name">{{ track.artist.name }}</span>
     <span *ngIf="track.duration" class="track__duration">{{ track.duration }}</span>
     <div class="track__actions">
-      <button mat-icon-button (click)="play_track()">
+      <button mat-icon-button (click)="play_track($event)" title="Play {{ track.name }}">
         <mat-icon>play_arrow</mat-icon>
       </button>
 
-      <a mat-icon-button href="{{ track.file }}" download>
+      <a mat-icon-button [href]="track.file" [download]="filename" [disabled]="cors_download.busy" title="Download {{ track.name }}" #cors_download="corsDownload">
         <mat-icon>download</mat-icon>
       </a>
     </div>
