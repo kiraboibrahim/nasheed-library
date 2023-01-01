@@ -1,5 +1,8 @@
 <header class="site-header">
-  <mat-toolbar>
-    <h1 class="site-title">NASHEED LIBRARY</h1>
+  <mat-toolbar [ngStyle]="{ 'display': 'flex' }">
+    <div [ngStyle]="{ 'margin-right': '5px', 'cursor': 'pointer' }" routerLink="/">
+      <img class="site-header__logo" src="assets/images/logo_on_black_bg.png">
+    </div>
+    <h1 class="site-header__title" routerLink="/">NASHEED LIBRARY</h1>
   </mat-toolbar>
 </header>
