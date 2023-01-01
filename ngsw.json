@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672597706783,
+  "timestamp": 1672598497620,
   "index": "https://kiraboibrahim.github.io/nasheed-library/index.html",
   "assetGroups": [
     {
@@ -15,13 +15,13 @@
         "https://kiraboibrahim.github.io/nasheed-library/407.ffcace77e151208a.js",
         "https://kiraboibrahim.github.io/nasheed-library/785.c53fcadf245cef05.js",
         "https://kiraboibrahim.github.io/nasheed-library/895.4c48aea50ac27430.js",
-        "https://kiraboibrahim.github.io/nasheed-library/common.0d7f29ce16603d5d.js",
+        "https://kiraboibrahim.github.io/nasheed-library/common.346cf52317262bbd.js",
         "https://kiraboibrahim.github.io/nasheed-library/favicon.ico",
         "https://kiraboibrahim.github.io/nasheed-library/index.html",
         "https://kiraboibrahim.github.io/nasheed-library/main.74849b0cf928e231.js",
         "https://kiraboibrahim.github.io/nasheed-library/manifest.webmanifest",
         "https://kiraboibrahim.github.io/nasheed-library/polyfills.67eaa7d5a6c7cec0.js",
-        "https://kiraboibrahim.github.io/nasheed-library/runtime.9cbfeaf32010a5f7.js",
+        "https://kiraboibrahim.github.io/nasheed-library/runtime.f00b05341dd6d8c5.js",
         "https://kiraboibrahim.github.io/nasheed-library/styles.872cb39ba9f85f2a.css"
       ],
       "patterns": []
@@ -66,13 +66,13 @@
     "https://kiraboibrahim.github.io/nasheed-library/assets/icons/icon-96x96.png": "429ca018100990ad267ec0f5ee448f04d1b609e4",
     "https://kiraboibrahim.github.io/nasheed-library/assets/images/logo_on_black_bg.png": "2bfdb73c03496b53d4e7b373b9320a2b1d6d78a6",
     "https://kiraboibrahim.github.io/nasheed-library/assets/images/music-note-simple.svg": "71e84b806eec79cd2b6ab0292685e765f89742d0",
-    "https://kiraboibrahim.github.io/nasheed-library/common.0d7f29ce16603d5d.js": "37a724685e8dc008c89f4f493b896c2f39fd6131",
+    "https://kiraboibrahim.github.io/nasheed-library/common.346cf52317262bbd.js": "403c54baff41c21b7ce5946def32736c8fb81269",
     "https://kiraboibrahim.github.io/nasheed-library/favicon.ico": "dcc4b92706eff996f6cf98974cfd6e523444fa85",
-    "https://kiraboibrahim.github.io/nasheed-library/index.html": "c8f0615ae4c69e58e1cc7bc106e10670fdeb51ef",
+    "https://kiraboibrahim.github.io/nasheed-library/index.html": "5374f7bd19e627f1ff9873b2532006e991fe5f77",
     "https://kiraboibrahim.github.io/nasheed-library/main.74849b0cf928e231.js": "0ea85227b7efa445a625c2601e0ec5a6448e3154",
-    "https://kiraboibrahim.github.io/nasheed-library/manifest.webmanifest": "8da8ba7299d6e943608d2ffa011ce15fdbdef560",
+    "https://kiraboibrahim.github.io/nasheed-library/manifest.webmanifest": "a02ffe9c3fed5b741e19c312d7f1f8ed0d6340b0",
     "https://kiraboibrahim.github.io/nasheed-library/polyfills.67eaa7d5a6c7cec0.js": "9a8eb103250feffecc33cdb1a775c1ef49f08977",
-    "https://kiraboibrahim.github.io/nasheed-library/runtime.9cbfeaf32010a5f7.js": "642675b0a608d9074fd70a957ec945bf9b22a70a",
+    "https://kiraboibrahim.github.io/nasheed-library/runtime.f00b05341dd6d8c5.js": "d78dcd177b227b1fcc7a92682e68eeb6fb941855",
     "https://kiraboibrahim.github.io/nasheed-library/styles.872cb39ba9f85f2a.css": "04e21f850e686cb66287ee00089a2bd02244cddf"
   },
   "navigationUrls": [
