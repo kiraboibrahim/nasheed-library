@@ -1,11 +1,13 @@
 import { Subscription } from 'rxjs';
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, ParamMap, TitleStrategy } from '@angular/router';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { MusicService } from 'src/app/data/service/music.service';
 import { EndOfPageScrollService } from 'src/app/core/services/end-of-page-scroll.service';
 import { Track } from 'src/app/data/types/track.model';
 import { Artist } from 'src/app/data/types/artist.model';
+import { AudioPlayerComponent } from 'src/app/shared/components/audio-player/audio-player.component';
+
 
 @Component({
   selector: 'app-artist-detail',
@@ -19,6 +21,8 @@ export class ArtistDetailComponent implements OnInit, OnDestroy {
   last_tracks_page_reached: boolean = false;
   loading: boolean = true;
   end_of_page_scroll_subscription: Subscription;
+
+  @ViewChild(AudioPlayerComponent) audio_player: AudioPlayerComponent;
 
   constructor(private music_service: MusicService, private activated_route: ActivatedRoute, private end_of_page_scroll_service: EndOfPageScrollService) {}
 
@@ -62,5 +66,10 @@ export class ArtistDetailComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     if(this.end_of_page_scroll_subscription) this.end_of_page_scroll_subscription.unsubscribe();
+  }
+
+  on_play(track: Track) {
+    this.audio_player.selectedAudio = track;
+    this.audio_player.play();
   }
 }

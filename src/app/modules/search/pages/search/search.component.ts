@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { MatTabChangeEvent } from '@angular/material/tabs';
@@ -8,6 +8,7 @@ import { Track } from 'src/app/data/types/track.model';
 import { Artist } from 'src/app/data/types/artist.model';
 import { EndOfPageScrollService } from 'src/app/core/services/end-of-page-scroll.service';
 import { MusicService } from 'src/app/data/service/music.service';
+import { AudioPlayerComponent } from 'src/app/shared/components/audio-player/audio-player.component';
 
 
 @Component({
@@ -31,6 +32,8 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   music_service_subscription: Subscription;
   end_of_page_scroll_subscription: Subscription;
+
+  @ViewChild(AudioPlayerComponent) audio_player: AudioPlayerComponent;
 
   constructor(private music_service: MusicService,
               private end_of_page_scroll_service: EndOfPageScrollService,
@@ -135,6 +138,11 @@ export class SearchComponent implements OnInit, OnDestroy {
         break;
     }
     if(this.tracks.length == 0 || this.artists.length == 0) this.search();
+  }
+
+  on_play(track: Track) {
+    this.audio_player.selectedAudio = track;
+    this.audio_player.play();
   }
 
   ngOnDestroy(): void {
