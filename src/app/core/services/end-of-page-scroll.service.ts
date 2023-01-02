@@ -3,7 +3,7 @@ import {
   filter,
   Observable,
   fromEvent,
-  throttleTime
+  debounceTime
 } from 'rxjs';
 
 @Injectable({
@@ -15,8 +15,8 @@ export class EndOfPageScrollService {
   constructor() {
     this.end_of_page_scroll$ = fromEvent(window, "scroll").
     pipe(
+      debounceTime(300),
       filter(is_end_of_scroll),
-      throttleTime(1000)
     );
   }
 }
