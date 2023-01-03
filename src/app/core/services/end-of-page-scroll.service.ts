@@ -27,9 +27,9 @@ let is_end_of_scroll = (_: Event): boolean => {
   const client_height = root_element.clientHeight;
   const scroll_height = root_element.scrollHeight;
 
-  const bottom_margin = 10;
+  const end_of_page_offset = 20;
 
-  if ((scroll_top + client_height) >= scroll_height - bottom_margin) {
+  if ((scroll_top + client_height) >= scroll_height - end_of_page_offset) {
     return true;
   }
   return false;
