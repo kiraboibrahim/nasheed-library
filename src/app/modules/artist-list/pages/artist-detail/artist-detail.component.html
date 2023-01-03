@@ -9,6 +9,8 @@
   </div>
 
   <h3 class="title">Tracks</h3>
+  <mat-divider></mat-divider>
+
   <div *ngFor="let artist_track of artist_tracks">
     <app-track-item [track]=artist_track (play)="on_play(artist_track)"></app-track-item>
     <mat-divider></mat-divider>
