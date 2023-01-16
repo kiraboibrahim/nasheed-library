@@ -8,10 +8,7 @@
   <mat-tab labeClass="tab-label" label="Tracks">
     <ng-template matTabContent>
       <div class="tracks-container">
-        <div *ngFor="let track of tracks">
-          <app-track-item [track]=track (play)="on_play(track)"></app-track-item>
-          <mat-divider></mat-divider>
-        </div>
+        <app-track-list [tracks]=tracks (play_track)="on_play($event)"></app-track-list>
       </div>
 
       <app-progress-spinner *ngIf="loading_tracks"></app-progress-spinner>

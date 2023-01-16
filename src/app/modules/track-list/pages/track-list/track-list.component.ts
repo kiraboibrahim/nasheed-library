@@ -58,7 +58,7 @@ export class TrackListComponent implements OnInit, OnDestroy {
     this.current_tracks_page_number++;
   }
 
-  on_play(track: Track) {
+  on_play_track(track: Track) {
     this.audio_player.selectedAudio = track;
     this.audio_player.play();
   }

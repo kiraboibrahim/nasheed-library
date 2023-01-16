@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { MaterialModule } from './modules/material.module';
 import { TrackItemComponent } from './components/track-item/track-item.component';
+import { TrackListComponent } from './components/track-list/track-list.component';
 import { ArtistItemComponent } from './components/artist-item/artist-item.component';
 import { FormatAudioDurationPipe } from './pipes/format-audio-duration.pipe';
 import { AudioPlayerComponent } from './components/audio-player/audio-player.component';
@@ -15,6 +16,7 @@ import { ArtistListComponent } from './components/artist-list/artist-list.compon
 @NgModule({
   declarations: [
     TrackItemComponent,
+    TrackListComponent,
     ArtistItemComponent,
     ArtistListComponent,
     FormatAudioDurationPipe,
@@ -33,6 +35,7 @@ import { ArtistListComponent } from './components/artist-list/artist-list.compon
     ArtistItemComponent,
     ArtistListComponent,
     TrackItemComponent,
+    TrackListComponent,
     AudioPlayerComponent,
     ProgressSpinnerComponent,
     NgModelDebounceChangeDirective,

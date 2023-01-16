@@ -1,0 +1,6 @@
+<div class="tracks-container">
+  <div *ngFor="let track of tracks">
+    <app-track-item [track]=track (play)="on_play(track)"></app-track-item>
+    <mat-divider></mat-divider>
+  </div>
+</div>
