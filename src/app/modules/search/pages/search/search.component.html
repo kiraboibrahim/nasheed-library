@@ -24,7 +24,9 @@
 
   <mat-tab label="Artists">
     <ng-template matTabContent>
-      <app-artist-list [artists]=artists></app-artist-list>
+      <div class="artists-container">
+        <app-artist-list [artists]=artists></app-artist-list>
+      </div>
       <app-progress-spinner *ngIf="loading_artists"></app-progress-spinner>
 
       <div class="no-results-found" *ngIf="reached_last_page_of_artists_results && artists.length == 0">No artists found</div>
