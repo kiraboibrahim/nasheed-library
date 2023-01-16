@@ -5,7 +5,7 @@
   <mat-divider></mat-divider>
 
   <div class="artist-list-container">
-    <app-artist-item  *ngFor="let artist of artists" [artist]=artist></app-artist-item>
+    <app-artist-item *ngFor="let artist of artists" [artist]=artist></app-artist-item>
   </div>
 
   <app-progress-spinner *ngIf="loading"></app-progress-spinner>

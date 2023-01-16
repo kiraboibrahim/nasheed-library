@@ -21,7 +21,7 @@ export class EndOfPageScrollService {
   }
 }
 
-let is_end_of_scroll = (_: Event): boolean => {
+let is_end_of_scroll = (event: Event): boolean => {
   let root_element: Element = document.documentElement;
   const scroll_top = root_element.scrollTop;
   const client_height = root_element.clientHeight;
