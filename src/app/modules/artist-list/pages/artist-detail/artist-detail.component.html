@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div [ngStyle]="{ 'padding': '2em' }">
+<div [ngStyle]="{ 'padding': '1em', 'padding-top': '2em', 'padding-bottom': '2em' }">
   <div *ngIf="artist" class="artist-container">
     <div>
       <img class="artist__image" src="{{ artist.image }}" alt="Photo of {{ artist.name }}">
