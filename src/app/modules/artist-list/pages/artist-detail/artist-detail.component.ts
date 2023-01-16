@@ -10,7 +10,7 @@ import { AudioPlayerComponent } from 'src/app/shared/components/audio-player/aud
 
 
 @Component({
-  selector: 'app-artist-detail',
+  selector: 'page-artist-detail',
   templateUrl: './artist-detail.component.html',
   styleUrls: ['./artist-detail.component.scss']
 })

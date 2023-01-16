@@ -12,7 +12,7 @@ import { Track } from 'src/app/data/types/track.model';
 import { AudioPlayerComponent } from 'src/app/shared/components/audio-player/audio-player.component';
 
 @Component({
-  selector: 'app-track-list',
+  selector: 'page-track-list',
   templateUrl: './track-list.component.html',
   styleUrls: ['./track-list.component.scss']
 })

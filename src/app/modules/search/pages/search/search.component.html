@@ -7,7 +7,7 @@
 <mat-tab-group mat-tabs-stretch="true" color="accent" (selectedTabChange)="on_tab_change($event)">
   <mat-tab labeClass="tab-label" label="Tracks">
     <ng-template matTabContent>
-      <div class="tracks-results-container">
+      <div class="tracks-container">
         <div *ngFor="let track of tracks">
           <app-track-item [track]=track (play)="on_play(track)"></app-track-item>
           <mat-divider></mat-divider>
@@ -24,9 +24,7 @@
 
   <mat-tab label="Artists">
     <ng-template matTabContent>
-      <div class="artists-results-container">.
-        <app-artist-item *ngFor="let artist of artists" [artist]=artist></app-artist-item>
-      </div>
+      <app-artist-list [artists]=artists></app-artist-list>
       <app-progress-spinner *ngIf="loading_artists"></app-progress-spinner>
 
       <div class="no-results-found" *ngIf="reached_last_page_of_artists_results && artists.length == 0">No artists found</div>

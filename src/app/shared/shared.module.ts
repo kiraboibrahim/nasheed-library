@@ -10,11 +10,13 @@ import { AudioPlayerComponent } from './components/audio-player/audio-player.com
 import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 import { NgModelDebounceChangeDirective } from './directives/ng-model-debounce-change/ng-model-debounce-change.directive';
 import { CorsDownloadDirective } from './directives/cors-download/cors-download.directive';
+import { ArtistListComponent } from './components/artist-list/artist-list.component';
 
 @NgModule({
   declarations: [
     TrackItemComponent,
     ArtistItemComponent,
+    ArtistListComponent,
     FormatAudioDurationPipe,
     AudioPlayerComponent,
     ProgressSpinnerComponent,
@@ -29,6 +31,7 @@ import { CorsDownloadDirective } from './directives/cors-download/cors-download.
   exports: [
     MaterialModule,
     ArtistItemComponent,
+    ArtistListComponent,
     TrackItemComponent,
     AudioPlayerComponent,
     ProgressSpinnerComponent,

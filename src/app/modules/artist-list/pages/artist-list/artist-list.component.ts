@@ -11,7 +11,7 @@ import { EndOfPageScrollService } from 'src/app/core/services/end-of-page-scroll
 
 
 @Component({
-  selector: 'app-artist-list',
+  selector: 'page-artist-list',
   templateUrl: './artist-list.component.html',
   styleUrls: ['./artist-list.component.scss']
 })

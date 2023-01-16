@@ -2,17 +2,3 @@
   font-size: 14px;
   font-weight: normal;
 }
-
-.artist-list-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-template-rows: auto;
-  grid-gap: 10px;
-  padding-top: 10px;
-}
-
-// Bottom padding for artist-list page should be just the height of
-// the fixed bottom navigation only because there is no audio player
-:host .container {
-  padding-bottom: 70px !important;
-}
