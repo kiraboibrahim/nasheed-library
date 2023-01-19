@@ -3,7 +3,7 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { MusicService } from 'src/app/data/service/music.service';
-import { EndOfPageScrollService } from 'src/app/core/services/end-of-page-scroll.service';
+import { ScrollService } from 'src/app/core/services/scroll-service';
 import { Track } from 'src/app/data/types/track.model';
 import { Artist } from 'src/app/data/types/artist.model';
 import { AudioPlayerComponent } from 'src/app/shared/components/audio-player/audio-player.component';
@@ -24,7 +24,7 @@ export class ArtistDetailComponent implements OnInit, OnDestroy {
 
   @ViewChild(AudioPlayerComponent) audio_player: AudioPlayerComponent;
 
-  constructor(private music_service: MusicService, private activated_route: ActivatedRoute, private end_of_page_scroll_service: EndOfPageScrollService) {}
+  constructor(private music_service: MusicService, private activated_route: ActivatedRoute, private scroll_service: ScrollService) {}
 
   ngOnInit(): void {
     this.activated_route.paramMap.subscribe((params: ParamMap) => {
@@ -34,7 +34,7 @@ export class ArtistDetailComponent implements OnInit, OnDestroy {
         this.get_artist_tracks();
       })
     });
-    this.end_of_page_scroll_subscription = this.end_of_page_scroll_service.end_of_page_scroll$.subscribe((event: Event) => {
+    this.end_of_page_scroll_subscription = this.scroll_service.end_of_scroll$.subscribe((event: Event) => {
       if(this.artist)  {
         this.get_artist_tracks();
       }

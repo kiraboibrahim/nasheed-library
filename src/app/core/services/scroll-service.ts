@@ -9,11 +9,11 @@ import {
 @Injectable({
   providedIn: 'root'
 })
-export class EndOfPageScrollService {
-  end_of_page_scroll$: Observable<Event>;
+export class ScrollService {
+  end_of_scroll$: Observable<Event>;
 
   constructor() {
-    this.end_of_page_scroll$ = fromEvent(window, "scroll").
+    this.end_of_scroll$ = fromEvent(window, "scroll").
     pipe(
       debounceTime(300),
       filter(is_end_of_scroll),
@@ -27,9 +27,9 @@ let is_end_of_scroll = (event: Event): boolean => {
   const client_height = root_element.clientHeight;
   const scroll_height = root_element.scrollHeight;
 
-  const end_of_page_offset = 20;
+  const end_of_scroll_offset = 20;
 
-  if ((scroll_top + client_height) >= scroll_height - end_of_page_offset) {
+  if ((scroll_top + client_height) >= scroll_height - end_of_scroll_offset) {
     return true;
   }
   return false;

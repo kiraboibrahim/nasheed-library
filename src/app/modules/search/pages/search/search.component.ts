@@ -6,7 +6,7 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
 
 import { Track } from 'src/app/data/types/track.model';
 import { Artist } from 'src/app/data/types/artist.model';
-import { EndOfPageScrollService } from 'src/app/core/services/end-of-page-scroll.service';
+import { ScrollService } from 'src/app/core/services/scroll-service';
 import { MusicService } from 'src/app/data/service/music.service';
 import { AudioPlayerComponent } from 'src/app/shared/components/audio-player/audio-player.component';
 
@@ -36,7 +36,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   @ViewChild(AudioPlayerComponent) audio_player: AudioPlayerComponent;
 
   constructor(private music_service: MusicService,
-              private end_of_page_scroll_service: EndOfPageScrollService,
+              private scroll_service: ScrollService,
               private activated_route: ActivatedRoute,
               private router: Router
              ) { }
@@ -46,7 +46,7 @@ export class SearchComponent implements OnInit, OnDestroy {
       this.query = params.get("query");
       this.search();
     });
-    this.end_of_page_scroll_subscription = this.end_of_page_scroll_service.end_of_page_scroll$.subscribe((event: Event) => {
+    this.end_of_page_scroll_subscription = this.scroll_service.end_of_scroll$.subscribe((event: Event) => {
       this.search();
     });
   }

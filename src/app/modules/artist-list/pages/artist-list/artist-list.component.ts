@@ -7,7 +7,7 @@ import {
 
 import { MusicService } from 'src/app/data/service/music.service';
 import { Artist } from 'src/app/data/types/artist.model';
-import { EndOfPageScrollService } from 'src/app/core/services/end-of-page-scroll.service';
+import { ScrollService } from 'src/app/core/services/scroll-service';
 
 
 @Component({
@@ -22,11 +22,11 @@ export class ArtistListComponent implements OnInit, OnDestroy {
   loading: boolean = false;
   end_of_page_scroll_subscription: Subscription;
 
-  constructor(private music_service: MusicService, private end_of_page_scroll_service: EndOfPageScrollService) {}
+  constructor(private music_service: MusicService, private scroll_service: ScrollService) {}
 
   ngOnInit(): void {
     this.get_artists();
-    this.end_of_page_scroll_subscription = this.end_of_page_scroll_service.end_of_page_scroll$.subscribe((event: Event) => {
+    this.end_of_page_scroll_subscription = this.scroll_service.end_of_scroll$.subscribe((event: Event) => {
       this.get_artists();
     });
   }
