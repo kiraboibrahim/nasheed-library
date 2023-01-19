@@ -69,7 +69,6 @@ export class ArtistDetailComponent implements OnInit, OnDestroy {
   }
 
   on_play(track: Track) {
-    this.audio_player.selectedAudio = track;
-    this.audio_player.play();
+    this.audio_player.playTrack(track)
   }
 }

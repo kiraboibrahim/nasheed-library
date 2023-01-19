@@ -133,4 +133,9 @@ export class AudioPlayerComponent extends AudioPlayerBaseComponent implements On
       this.selectedAudio = this.audioList[this.currentAudioIndex];
     }
   }
+
+  playTrack(track: Track) {
+    this.selectedAudio = track;
+    this.play();
+  }
 }
