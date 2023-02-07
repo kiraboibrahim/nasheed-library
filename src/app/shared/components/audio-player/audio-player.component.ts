@@ -29,7 +29,7 @@ export class AudioPlayerComponent extends AudioPlayerBaseComponent implements On
   @Input() previous: boolean = true;
   @Input() shuffle: boolean = true;
   @Input() repeat: boolean = true;
-  @Input() scrollTitle: boolean = false;
+  @Input() scrollTitle: boolean = true;
   @Input() playButtonColor: string = "rgb(144, 144, 144)";
   @Input() pauseButtonColor: string = "rgb(144, 144, 144)";
   @Input() nextButtonColor: string = "rgb(144, 144, 144)";

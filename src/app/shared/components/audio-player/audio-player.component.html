@@ -20,10 +20,10 @@
           <div>{{ totalAudioLength | formatAudioDuration }}</div>
         </div>
       </div>
-      <marquee *ngIf="scrollTitle" [ngStyle]="{ 'color' : audioTitleColor }">
-        <p class="title"> {{selectedAudio.name}}</p>
+      <marquee *ngIf="scrollTitle" [ngStyle]="{ 'color' : audioTitleColor }" width="210" height="25" direction="right" scrollamount="2">
+        <span class="title"> {{selectedAudio.name}}</span>
       </marquee>
-      <p class="title" [ngStyle]="{ 'color' : audioTitleColor }" *ngIf="!scrollTitle"> {{ selectedAudio.name }}</p>
+      <span class="title" [ngStyle]="{ 'color' : audioTitleColor }" *ngIf="!scrollTitle"> {{ selectedAudio.name }}</span>
     </div>
     <div class="controls">
 
@@ -68,7 +68,7 @@
       <!-- previous button ends -->
 
       <!-- play button starts -->
-      <svg id="Layer_1" (click)="play()" *ngIf="!isAudioPlaying" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+      <svg id="Layer_1" class="play-icon" (click)="play()" *ngIf="!isAudioPlaying" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 64 64" [ngStyle]="{ 'fill' : playButtonColor }">
         <title>play</title>
         <path class="cls-1"
@@ -78,7 +78,7 @@
       <!-- play button ends -->
 
       <!-- pause button starts -->
-      <svg id="Layer_1" (click)="pause()" *ngIf="isAudioPlaying" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+      <svg id="Layer_1" class="pause-icon" (click)="pause()" *ngIf="isAudioPlaying" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 64 64" [ngStyle]="{ 'fill' : pauseButtonColor }">
         <title>pause</title>
         <g id="pause">

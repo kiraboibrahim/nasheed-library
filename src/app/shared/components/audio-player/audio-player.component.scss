@@ -4,6 +4,9 @@ $slider-thumb-height: 6px;
 $icon-width: 14px;
 $icon-height: 14px;
 
+$play-icon-width: 19px;
+$play-icon-height: 19px;
+
 $nav-height: 70px;
 
 @mixin icon {
@@ -12,6 +15,7 @@ $nav-height: 70px;
   margin: 0 20px;
   cursor: pointer;
 }
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -51,9 +55,12 @@ $nav-height: 70px;
     width: 100%;
     .details {
       text-align: center;
-      .title{
-        color: rgb(76, 130, 175);
-        margin: 7px 0 15px 0px;
+
+      .title {
+        display: inline-block;
+        color: rgb(144, 144, 144);
+        font-weight: bold;
+        font-size: 12px;
       }
     }
 
@@ -68,9 +75,14 @@ $nav-height: 70px;
       svg {
         @include icon();
       }
+
+      .play-icon, .pause-icon {
+        width: $play-icon-width;
+        height: $play-icon-height;
+      }
     }
 
-    .volume-container{
+    .volume-container {
       position: relative;
       .volume-control {
         width: 90px;
