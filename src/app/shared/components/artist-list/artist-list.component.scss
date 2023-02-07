@@ -5,23 +5,4 @@
   grid-gap: 15px;
   padding-top: 10px;
 }
-/*
-@media screen and (max-width: 305px) {
-  .artists-container {
-    grid-template-columns: 120px;
-  }
-}
 
-
-@media screen and (min-width: 305px) and (max-width: 462px) {
-  .artists-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (min-width: 463px) and (max-width: 550px) {
-  .artists-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-*/
