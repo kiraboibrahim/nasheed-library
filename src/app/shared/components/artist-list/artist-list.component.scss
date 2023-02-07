@@ -1,14 +1,14 @@
 .artists-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   grid-template-rows: auto;
-  grid-gap: 10px;
+  grid-gap: 15px;
   padding-top: 10px;
 }
-
+/*
 @media screen and (max-width: 305px) {
   .artists-container {
-    grid-template-columns: 150px;
+    grid-template-columns: 120px;
   }
 }
 
@@ -24,3 +24,4 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+*/

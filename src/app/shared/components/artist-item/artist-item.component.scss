@@ -1,5 +1,11 @@
 $border-radius: 5px;
 
+@mixin text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .artist {
   display: flex;
   flex-direction: column;
@@ -17,7 +23,8 @@ $border-radius: 5px;
   &__name {
     flex: 0 0 auto;
     font-size: 13px;
-    padding: 7px;
+    padding: 10px;
     text-align: center;
+    @include text-truncate();
   }
 }
